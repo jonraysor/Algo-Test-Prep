@@ -29,7 +29,7 @@ static void merge(T * A, int mid, T * A2, int end){
     
     // this loop will be used to compare the two given arrays while their
     // indicies are not further than granted
-    while(leftIndex <= mid && rightIndex < end){
+    while(leftIndex < mid && rightIndex < end){
         
         // comparison
         if (A[leftIndex] <= A2[rightIndex]){
@@ -47,13 +47,13 @@ static void merge(T * A, int mid, T * A2, int end){
     // if one array's index reaches it's length
     // the remainer of the other array is to be put into the temp array
     
-    while(leftIndex <= mid){
+    while(leftIndex < mid){
         temp[tempIndex] = A[leftIndex];
         leftIndex += 1;
         tempIndex += 1;
     }
     
-    while(rightIndex <= end){
+    while(rightIndex < end){
         temp[tempIndex] = A2[rightIndex];
         rightIndex += 1;
         tempIndex += 1;
