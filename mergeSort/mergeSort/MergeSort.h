@@ -26,10 +26,11 @@ static void merge(T * A, int mid, T * A2, int end){
     int leftIndex = 0;
     int rightIndex = 0;
     int tempIndex = 0;
-    
+    const int sizeright = end - mid;
+
     // this loop will be used to compare the two given arrays while their
     // indicies are not further than granted
-    while(leftIndex < mid && rightIndex < end){
+    while(leftIndex < mid && rightIndex < sizeright){
         
         // comparison
         if (A[leftIndex] <= A2[rightIndex]){
@@ -53,7 +54,7 @@ static void merge(T * A, int mid, T * A2, int end){
         tempIndex += 1;
     }
     
-    while(rightIndex < end){
+    while(rightIndex < sizeright){
         temp[tempIndex] = A2[rightIndex];
         rightIndex += 1;
         tempIndex += 1;
