@@ -20,7 +20,7 @@ template<class T>
 static void merge(T * A, int mid, T * A2, int end){
     
     // allocate an array that will be used to hold our sorted elements
-    int * temp = new int [end];
+    int * temp = new int [mid + end];
     
     // these will be used to hold the current index of our 'three' arrays
     int leftIndex = 0;
@@ -80,7 +80,7 @@ void mergeSort(T * arr, int size){
     
     mergeSort(arr + midPoint, size - midPoint);
     
-    merge(arr, midPoint, arr + midPoint, size);
+    merge(arr, midPoint, arr + midPoint, size-midPoint);
 }
 
 
