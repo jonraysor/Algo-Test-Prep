@@ -22,12 +22,11 @@ int rightChild(int i){
 }
 
 int leftChild(int i){
-    cout << "int left: i = " << i << endl;
     return ((2*i) + 1);
 }
 
 void maxHeapify(vector<int> &A, int i){
-    
+
     unsigned long int sizeOfHeap = A.size();
     int l = leftChild(i);
     int r = rightChild(i);
@@ -43,10 +42,10 @@ void maxHeapify(vector<int> &A, int i){
     if(r <= sizeOfHeap && A[r] > A[largest])
         largest = r;
     
-    if (largest != i)
-        
+    if (largest != i){
         swap(A[i],A[largest]);
-    maxHeapify(A, largest);
+        maxHeapify(A, largest);
+    }
 }
 
 
@@ -54,8 +53,7 @@ static void buildMaxHeap(vector<int> &A){
     
     int sizeOfHeap = A.size();
     
-    for(int i = (sizeOfHeap/2); i >= 21; i--)
-        
+    for(int i = (sizeOfHeap/2); i >= 1; i--)
         maxHeapify(A, i);
     
 }
