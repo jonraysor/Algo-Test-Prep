@@ -18,12 +18,12 @@ using namespace std;
 //}
 
 int rightChild(int i){
-    return ((2*i) + 2);
+    return ((2*i) + 1);
 }
 
 int leftChild(int i){
-   
-    return ((2*i) + 1);
+
+    return ((2*i));
 }
 
 void maxHeapify(vector<int> &A, int i){
@@ -41,6 +41,7 @@ void maxHeapify(vector<int> &A, int i){
         largest = i;
     
     if(r <= sizeOfHeap && A[r] > A[largest])
+        
         largest = r;
     
     if (largest != i){
@@ -53,7 +54,6 @@ void maxHeapify(vector<int> &A, int i){
 static void buildMaxHeap(vector<int> &A){
     
     int sizeOfHeap = A.size();
-    
     
     for(int i = (sizeOfHeap/2); i >= 1; i--)
         maxHeapify(A, i);
