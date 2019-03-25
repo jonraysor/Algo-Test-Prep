@@ -17,14 +17,17 @@ using namespace std;
   //  return floor(i/2);
 //}
 
+
+int leftChild(int i){
+    
+    return ((2*i));
+}
+
 int rightChild(int i){
     return ((2*i) + 1);
 }
 
-int leftChild(int i){
 
-    return ((2*i));
-}
 
 void maxHeapify(vector<int> &A, int i){
 
