@@ -22,6 +22,7 @@ int rightChild(int i){
 }
 
 int leftChild(int i){
+   
     return ((2*i) + 1);
 }
 
@@ -52,6 +53,7 @@ void maxHeapify(vector<int> &A, int i){
 static void buildMaxHeap(vector<int> &A){
     
     int sizeOfHeap = A.size();
+    
     
     for(int i = (sizeOfHeap/2); i >= 1; i--)
         maxHeapify(A, i);
